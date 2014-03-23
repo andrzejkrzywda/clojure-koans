@@ -18,10 +18,11 @@
   )
 
 (defn factorial [n]
-  (if (<= n 1) 
-    1 
-    (* n  (factorial (- n 1))  )
-    ))
+  (loop [m n f 1]
+    (if (= m 1)
+      f
+      (recur (dec m) (* f m))))
+  )
 
 
 (meditations
